@@ -1,0 +1,74 @@
+<%- include('partials/_header'); -%>
+
+<!---------          FORMULARIO               --------->
+<div class="card">
+  <div class="card-body">
+    <form class="/add" method="post">
+        <div class="form-group row">
+          <div class="col-md-3">
+              <label class="ms-2">Nombre</label>
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="col-md-3">
+              <label class="ms-2">Apellido</label>
+              <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+          </div> 
+        </div>  
+
+        <div class="form-group row">
+          <div class="col-md-3">
+            <label class="ms-2">Cedula</label>
+            <input type="number" name="cedula" class="form-control" placeholder="Cedula">
+          </div>
+          <div class="col-md-3">
+              <label class="ms-2">Telefono</label>
+              <input type="number" name="n_telefono" class="form-control" placeholder="Telefono">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6">
+            <label class="ms-2">Correo</label>
+            <input type="email" name="correo" class="form-control" placeholder="Correo">
+        </div>            
+        </div>
+        
+        <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!---------          TABLA DE USUARIOS               --------->
+
+<div class="ms-5 me-5 mb-5 mt-5">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%if(data) { for (var i=0;i< data.length; i++){%>
+        <tr>
+          <th scope="row"><%= (i+1) %></th>
+          <td> <%= data[i].nombre %> </td>
+          <td> <%= data[i].apellido %> </td>
+          <td> <%= data[i].cedula %> </td>
+          <td> <%= data[i].n_telefono %> </td>
+          <td> <%= data[i].correo %> </td>
+        </tr>
+        <% } %>      
+      <% } %> 
+      
+    </tbody>
+  </table>
+</div>
+<%- include('partials/_footer'); -%>
