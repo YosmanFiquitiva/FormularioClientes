@@ -53,6 +53,7 @@
         <th scope="col">Cedula</th>
         <th scope="col">Telefono</th>
         <th scope="col">Correo</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -63,7 +64,12 @@
           <td> <%= data[i].apellido %> </td>
           <td> <%= data[i].cedula %> </td>
           <td> <%= data[i].n_telefono %> </td>
-          <td> <%= data[i].correo %> </td>
+          <td> <%= data[i].correo %> </td>          
+          <td> 
+            <a href="/update/<%= data[i].id_cliente%>" class="btn btn-info">Actualizar</a>
+            <a href="/delete/<%= data[i].id_cliente%>" class="btn btn-danger">Eliminar</a>
+          </td>
+          
         </tr>
         <% } %>      
       <% } %> 

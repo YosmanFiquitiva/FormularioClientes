@@ -1,0 +1,44 @@
+<%- include('partials/_header'); -%>
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <form action="/update/<%=data.id_cliente%>" method="post">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label class="ms-2">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" value="<%=data.nombre%>">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="ms-2">Apellido</label>
+                        <input type="text" name="apellido" class="form-control" value="<%=data.apellido%>">
+                    </div> 
+                    </div>  
+            
+                    <div class="form-group row">
+                    <div class="col-md-3">
+                        <label class="ms-2">Cedula</label>
+                        <input type="number" name="cedula" class="form-control" value="<%=data.cedula%>">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="ms-2">Telefono</label>
+                        <input type="number" name="n_telefono" class="form-control" value="<%=data.n_telefono%>">
+                    </div>
+                    </div>
+            
+                    <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="ms-2">Correo</label>
+                        <input type="email" name="correo" class="form-control" value="<%=data.correo%>">
+                    </div>            
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary mt-2">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/_footer'); -%>
